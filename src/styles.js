@@ -1,5 +1,5 @@
 import { Dimensions } from 'react-native';
-import mobileCheck from './src/DeviceDetect';
+import mobileCheck from './DeviceDetect';
 
 const DESKTOP = mobileCheck.isMobile ? false : true;
 const entireScreenWidth = Dimensions.get('window').width;
