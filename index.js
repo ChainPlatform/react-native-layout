@@ -1,4 +1,4 @@
-import { getLayoutAdmin, getScreenSizeAdmin } from "./LayoutAdmin";
+import { getLayoutAdmin, getScreenSizeAdmin } from "./src/LayoutAdmin";
 import {
     getScreenSize,
     getCartLayout,
