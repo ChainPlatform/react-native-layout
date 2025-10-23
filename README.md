@@ -1,5 +1,5 @@
 # Chain Platform Layout
-@chainplatform/sdk is a React Native library implement for react-native and react-native-web. Require crypto-js and react-native-mmkv packages.
+@chainplatform/layout is a React Native library implement for react-native and react-native-web.
 
 <p align="center">
   <a href="https://github.com/ChainPlatform/react-native-layout/blob/HEAD/LICENSE">
@@ -36,7 +36,7 @@ yarn add @chainplatform/layout
 
 ```js
 import React from 'react';
-import {sdkColors} from '@chainplatform/layout';
+import { getScreenLanding } from '@chainplatform/layout';
 
 class App extends React.Component {
 
