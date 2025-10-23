@@ -125,7 +125,7 @@ export function getScreenLanding(layoutWidth, isDesktop) {
         numberwebinarChart = 2;
         webinarPadding = setSize(15);
     }
-    if (layoutWidth >= sdkStyles.split_desktop && side_bar_width == 0) {
+    if (layoutWidth >= sdkStyles.split_desktop) {
         numberwebinarChart = 3;
         webinarPadding = setSize(15);
     }
