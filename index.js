@@ -9,13 +9,13 @@ import {
     getCourseLearingLayout,
     getScreenWebinarSize
 } from "./src/Layout";
+import { getScreenLanding } from "./src/Landing";
 import sdkStyles, { setSize } from "./src/styles";
 import sdkColors from "./src/colors";
 import mobileCheck from "./src/DeviceDetect";
 
 export default sdkStyles;
 export {
-    setSize,
     getLayoutAdmin,
     getScreenSizeAdmin,
     getScreenSize,
@@ -26,6 +26,8 @@ export {
     getUserOrderLayout,
     getCourseLearingLayout,
     getScreenWebinarSize,
+    getScreenLanding,
     sdkColors,
+    setSize,
     mobileCheck
 };

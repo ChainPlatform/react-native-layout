@@ -6,7 +6,7 @@ const entireScreenWidth = Dimensions.get('window').width;
 const SCREEN_WIDTH = DESKTOP && entireScreenWidth >= 1440 ? 1440 : entireScreenWidth;
 const screenWidth = DESKTOP ? Dimensions.get('window').width : 375;
 const REM = entireScreenWidth / screenWidth;
-const barHeight = DESKTOP ? (57 * REM) : (50 * REM);
+const barHeight = 59.75 * REM;
 
 const sdkStyles = {
     HEIGHT: Dimensions.get('window').height,
