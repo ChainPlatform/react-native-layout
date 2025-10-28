@@ -110,8 +110,8 @@ export function getScreenLanding(layoutWidth, isDesktop) {
     const padding = (numberChart + 1) * setSize(15);
 
     let packageWidth = (layoutWidth - padding - sideBarWidth) / numberChart;
-    if (packageWidth < setSize(250)) {
-        packageWidth = setSize(250);
+    if (packageWidth < setSize(280)) {
+        packageWidth = setSize(280);
     }
     if (packageWidth > setSize(375)) {
         packageWidth = setSize(375);
