@@ -1,6 +1,6 @@
 {
   "name": "@chainplatform/layout",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "@chainplatform/layout",
   "main": "index.js",
   "devDependencies": {
