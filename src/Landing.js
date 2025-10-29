@@ -24,17 +24,27 @@ export function getScreenLanding(layoutWidth, isDesktop) {
     let newsPadding = 0;
     // New Course
     let courseItem = 1;
-    let coursePadding = 0;
+    let coursePadding = setSize(15);
     if (isDesktop) {
-        courseSpace = setSize(30) + setSize(15);
+        // courseSpace = setSize(30) + setSize(15);
         newsSpace = setSize(30) + setSize(15);
     } else {
-        courseSpace = setSize(15);
+        // courseSpace = setSize(15);
         newsSpace = setSize(15);
     }
+    // base_desktop: 767,
+    // split_desktop: 991,
+    // wide_split_desktop: 1439,
     let drawerType = "back";
     if (layoutWidth > sdkStyles.base_desktop) {
         drawerType = "permanent";
+        courseItem = 2;
+    }
+    if (layoutWidth > sdkStyles.split_desktop) {
+        courseItem = 3;
+    }
+    if (layoutWidth > sdkStyles.wide_split_desktop) {
+        courseItem = 4;
     }
     if (isDesktop && layoutWidth > sdkStyles.base_desktop) {
         sideBarWidth = setSize(0);
@@ -50,8 +60,8 @@ export function getScreenLanding(layoutWidth, isDesktop) {
         newsItem = 2;
         newsPadding = setSize(15);
         // New Course
-        courseItem = 3;
-        coursePadding = setSize(30);
+        // courseItem = 3;
+        // coursePadding = setSize(30);
     }
     let viewWidth = setSize(345);
     let viewHeight = setSize(195);
@@ -72,16 +82,16 @@ export function getScreenLanding(layoutWidth, isDesktop) {
             newsItem = 3;
             newsPadding = setSize(30);
             // New Course
-            courseItem = 4;
-            coursePadding = setSize(45);
+            // courseItem = 4;
+            // coursePadding = setSize(45);
         }
         if (layoutWidth >= sdkStyles.wide_split_desktop) {
             // Course
             courseTotalItem = 5;
             courseSpace = setSize(75) + setSize(15);
             //
-            courseItem = 5;
-            coursePadding = setSize(60);
+            // courseItem = 5;
+            // coursePadding = setSize(60);
         }
         bannerViewWidth = layoutWidth - sideBarWidth - 2 * viewPadding - splitPadding;
         viewWidth = bannerViewWidth / bannerOnScreen;
@@ -124,7 +134,7 @@ export function getScreenLanding(layoutWidth, isDesktop) {
     let newsItemViewWidth = layoutWidth - sideBarWidth - 2 * viewPadding - newsPadding;
     const newsItemWidth = newsItemViewWidth / newsItem;
 
-    let courseItemViewWidth = layoutWidth - sideBarWidth - 2 * viewPadding - coursePadding;
+    let courseItemViewWidth = layoutWidth - sideBarWidth - 2 * viewPadding - (2 * (courseItem + 1) * coursePadding);
     const courseItemWidth = courseItemViewWidth / courseItem;
 
     let webinarViewWidth = layoutWidth - sideBarWidth - 2 * viewPadding - (numberwebinarChart - 1) * webinarPadding;
@@ -136,6 +146,10 @@ export function getScreenLanding(layoutWidth, isDesktop) {
     view.courseItemWidth = courseItemWidth;
     view.courseItem = courseItem;
     view.coursePadding = coursePadding;
+    view.packageWidth = packageWidth;
+    view.drawerType = drawerType;
+    view.layout = layout;
+
     view.newsItemWidth = newsItemWidth;
     view.newsItem = newsItem;
     view.newsPadding = newsPadding;
@@ -144,7 +158,6 @@ export function getScreenLanding(layoutWidth, isDesktop) {
     view.numberWebinar = numberwebinarChart;
     view.viewPadding = viewPadding;
     view.sideBarWidth = sideBarWidth;
-    view.layout = layout;
     view.bannerOnScreen = bannerOnScreen;
     view.imageMenuSize = imageMenuSize;
     view.fontMenuSize = fontMenuSize;
@@ -154,8 +167,7 @@ export function getScreenLanding(layoutWidth, isDesktop) {
     view.courseWidth = courseWidth;
     view.newsWidth = newsWidth;
     view.splitPadding = splitPadding;
-    view.packageWidth = packageWidth;
     view.packagePadding = padding;
-    view.drawerType = drawerType;
+
     return view;
 }
