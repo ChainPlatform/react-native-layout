@@ -6,6 +6,7 @@ import {
     getUserCourseLayout,
     getUserOrderLayout,
     getCourseLearingLayout,
+    getCartConfirmLayout,
     getScreenWebinarSize
 } from "./src/Layout";
 import { getCartLayout } from "./src/Cart";
@@ -20,6 +21,7 @@ export {
     getScreenSizeAdmin,
     getScreenSize,
     getCartLayout,
+    getCartConfirmLayout,
     getTransactionLayout,
     getCourseLayout,
     getUserCourseLayout,

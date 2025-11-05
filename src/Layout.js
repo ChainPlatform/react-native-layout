@@ -173,6 +173,32 @@ export function getTransactionLayout(layoutWidth, isDesktop) {
     return view;
 }
 
+export function getCartConfirmLayout(layoutWidth, isDesktop, side_bar_width) {
+    let viewPadding = 0;
+    let viewSplit = sdkStyles.w100pc;
+    let borderRadius = 0;
+    let marginBottom = setSize(1);
+    let sideBarWidth = 0;
+    if (isDesktop && layoutWidth > sdkStyles.base_desktop) {
+        sideBarWidth = side_bar_width;
+        borderRadius = setSize(4);
+        marginBottom = setSize(10);
+    }
+    if (layoutWidth >= sdkStyles.wide_split_desktop) {
+        viewSplit = sdkStyles.w50pc;
+    }
+    if (layoutWidth >= 767) {
+        viewPadding = setSize(15);
+    }
+    let view = {};
+    view.viewPadding = viewPadding;
+    view.viewSplit = viewSplit;
+    view.sideBarWidth = sideBarWidth;
+    view.itemBorderRadius = borderRadius;
+    view.itemMarginBottom = marginBottom;
+    return view;
+}
+
 export function getCourseLayout(layoutWidth, isDesktop) {
     let viewSplit = sdkStyles.w100pc;
     let viewPadding = 0;
