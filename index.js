@@ -14,6 +14,7 @@ import { getScreenLanding } from "./src/Landing";
 import sdkStyles, { setSize } from "./src/styles";
 import sdkColors from "./src/colors";
 import mobileCheck from "./src/DeviceDetect";
+import { getDoExamLayout } from "./src/Exam";
 
 export default sdkStyles;
 export {
@@ -29,6 +30,7 @@ export {
     getCourseLearingLayout,
     getScreenWebinarSize,
     getScreenLanding,
+    getDoExamLayout,
     sdkColors,
     setSize,
     mobileCheck
