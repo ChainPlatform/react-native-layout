@@ -97,6 +97,7 @@ const sdkStyles = {
         borderColor: '#DADADA80'
     },
     auto: 'auto',
+    base_mobile: 375,
     base_desktop: 767,
     split_desktop: 991,
     wide_split_desktop: 1439,
