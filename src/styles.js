@@ -7,14 +7,18 @@ const SCREEN_WIDTH = DESKTOP && entireScreenWidth >= 1440 ? 1440 : entireScreenW
 const screenWidth = DESKTOP ? Dimensions.get('window').width : 375;
 const REM = entireScreenWidth / screenWidth;
 const barHeight = 59.75 * REM;
+const bottomHeight = !DESKTOP || entireScreenWidth <= 767 ? 50 * REM : barHeight;
 
 const sdkStyles = {
     HEIGHT: Dimensions.get('window').height,
-    WIDTH: Dimensions.get('window').width,
+    WIDTH: entireScreenWidth,
     SCREEN_WIDTH: SCREEN_WIDTH,
     DESKTOP: DESKTOP,
     REM: REM,
     barHeight: barHeight,
+    OS: mobileCheck.os,
+    bottomBarHeight: { height: bottomHeight },
+    topBarHeight: mobileCheck.os == "mini_app" ? { height: 39 * REM } : { height: !DESKTOP || entireScreenWidth <= 767 ? 44 * REM : barHeight },
     headerHeight: mobileCheck.os == "mini_app" ? { height: 39 * REM } : { height: barHeight },
     headerRightContainerStyle: mobileCheck.os == "mini_app" ? { paddingRight: 80 * REM } : {},
     image_course_width: 356,
